@@ -1,5 +1,19 @@
-echo ".idea/" >> .gitignorevenv/
+
 .env
+.env.*
+secrets/
+keys/
+
+# Python / Environment
 __pycache__/
-.DS_Store
+venv/
+.venv/
+*.pyc
+
+# IDEs
+.vscode/
 .idea/
+
+# Database
+*.db
+*.sqlite
