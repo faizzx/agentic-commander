@@ -8,13 +8,15 @@ mcp = FastMCP("IncidentCommander")
 
 def get_k8s_client():
     """Helper to detect if we have a real K8s connection."""
-    try:
-        config.load_kube_config()
-        return client.CoreV1Api()
-    except Exception:
-        # If no cluster is found, we'll return None to trigger 'Mock Mode'
-        return None
+    # Temp commenting to mock.
+    # try:
+    #     config.load_kube_config()
+    #     return client.CoreV1Api()
+    # except Exception:
+    #     # If no cluster is found, we'll return None to trigger 'Mock Mode'
+    #     return None
 
+    return None # This forces the 'if not v1' mock logic in your tools
 
 @mcp.tool()
 def scan_cluster_health(namespace: str = "default") -> str:
